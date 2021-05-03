@@ -12,5 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var datepicker = document.querySelectorAll('.datepicker');
     var instances = M.Datepicker.init(datepicker, {
                                                   autoClose: "True", 
-                                                  format: "dd mmm, yyyy",});
+                                                  format: "dd mmmm, yyyy",
+                                                  yearRange: 3,
+                                                  showClearBtn: true,
+                                                  i18n: {
+                                                    done: "Select"
+                                                  }
+                                                });
   });
