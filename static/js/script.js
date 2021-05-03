@@ -19,4 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                                     done: "Select"
                                                   }
                                                 });
+    var picker = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(picker);
   });

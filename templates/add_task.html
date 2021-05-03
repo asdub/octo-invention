@@ -7,9 +7,21 @@
         <form class="col s12" method="POST" action="">
             <div class="row">
                 <div class="input-field col s12">
+                    <i class="fas fa-folder-open deep-orange-text text-lighten-3 prefix"></i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                      <option value="" selected>Choose Category</option>
+                      {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                      {% endfor %}
+                    </select>
+                    <label for="category_name">Task Category</label>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
                     <i class="fas fa-pencil-alt deep-orange-text text-lighten-3 prefix"></i>
                     <input id="task_name" name="task_name" minlength="5" maxlength="50"
-                            type="text" lass="validate" required>
+                            type="text" class="validate" required>
                     <label for="task_name">Task Name</label>
                 </div>
             </div>
@@ -17,14 +29,14 @@
                 <div class="input-field col s12">
                     <i class="fas fa-list deep-orange-text text-lighten-3 prefix"></i>
                     <textarea id="task_description" name="task_description" minlength="5" 
-                                maxlength="50" class="materialize-textarea" required></textarea>
+                                maxlength="50" class="materialize-textarea validate" required></textarea>
                     <label for="task_description">Task Description</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt deep-orange-text text-lighten-3 prefix"></i>
-                    <input id="due_date" name="due_date" type="text" class="datepicker" validate></input>
+                    <input id="due_date" name="due_date" type="text" class="datepicker validate"></input>
                     <label for="due_date">Due Date</label>
                 </div>
             </div>
