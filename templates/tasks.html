@@ -9,8 +9,10 @@
     <div class="collapsible-header deep-orange lighten-5">
       <div class="col s3">
         <i class="fas fa-caret-down"></i>
-        <a href="" class="waves-effect waves-light btn-small deep-orange accent-1">Done</a>
-        <a href="{{ url_for('edit_task', task_id=task._id) }}" class="waves-effect waves-light btn-small deep-orange accent-1">Edit</a>
+        {% if session.user|lower  == task.created_by|lower %}
+          <a href="" class="waves-effect waves-light btn-small deep-orange accent-1">Done</a>
+          <a href="{{ url_for('edit_task', task_id=task._id) }}" class="waves-effect waves-light btn-small deep-orange accent-1">Edit</a>
+        {% endif %}
       </div>
       <div class="col s9">
         <strong>{{ task.task_name }}</strong> : {{ task.due_date }}
